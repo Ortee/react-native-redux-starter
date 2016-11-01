@@ -2,6 +2,6 @@
 
 import React from 'react'
 import { AppRegistry } from 'react-native'
-import AppContainer from './src/components/'
+import App from './src/index'
 
-AppRegistry.registerComponent('starter', () => AppContainer)
+AppRegistry.registerComponent('nativestarter', () => App)
