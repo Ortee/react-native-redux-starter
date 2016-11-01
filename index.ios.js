@@ -1,7 +1,4 @@
-'use strict';
+import { AppRegistry } from 'react-native';
+import App from './src/app';
 
-import React from 'react'
-import { AppRegistry } from 'react-native'
-import App from './src/index'
-
-AppRegistry.registerComponent('nativestarter', () => App)
+AppRegistry.registerComponent('nativestarter', () => App);
