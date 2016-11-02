@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-class Posts extends Component {
+class Main extends Component {
   render() {
-    console.log(this.props);
     return (
       <View style={{margin: 128}}>
-        <Text onPress={Actions.author}>Posts Component</Text>
+        <Text onPress={Actions.posts}>Main Component</Text>
       </View>
     );
   }
 }
 
-export default Posts;
+export default Main;

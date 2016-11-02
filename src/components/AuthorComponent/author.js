@@ -4,6 +4,7 @@ import { Actions } from 'react-native-router-flux';
 
 class Author extends Component {
   render() {
+    console.log(this.props);
     return (
       <View style={{margin: 128}}>
         <Text onPress={Actions.posts}>Author Component</Text>
