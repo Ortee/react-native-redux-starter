@@ -5,19 +5,17 @@ import Menu from '../MenuComponent/menu';
 import Posts from '../PostsComponent/posts';
 import Author from '../AuthorComponent/author';
 
+
 class Main extends Component {
   renderScene(route, navigator) {
     if (route.name === 'posts') {
       return <Posts {...this.props} navigator={navigator}/>;
     } else if (route.name === 'author') {
       return <Author {...this.props} navigator={navigator}/>;
-    } if (route.name === 'menu') {
-      return (<Menu navigator={navigator}/>);
     }
     return (<Menu navigator={navigator}/>);
   }
   render() {
-    console.log(this.props);
     return (
       <View style={{ flex: 1}}>
         <Navigator

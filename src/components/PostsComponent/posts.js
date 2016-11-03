@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { View, Text, StyleSheet } from 'react-native';
+import { Button } from 'react-native-material-design';
 
 class Posts extends Component {
   _navigate = () => {
@@ -9,17 +9,32 @@ class Posts extends Component {
     });
   }
   render() {
+    var styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column'
+    },
+    halfHeight: {
+        flex: .5,
+        backgroundColor: '#FF3366'
+    },
+    quarterHeight: {
+        flex: .25,
+        backgroundColor: '#000'
+    }
+  });
     return (
-      <View style={{margin: 20}}>
-        <TouchableHighlight style={{backgroundColor: 'red'}} onPress={ () => this._navigate() }>
-            <Text>Back</Text>
-        </TouchableHighlight>
-        <View style={{margin: 20}}>
-          <Text onPress={Actions.author}>Posts Component</Text>
-        </View>
+      <View style={styles.container}>
+          <View style={styles.halfHeight} />
+          {/* <View style={styles.quarterHeight} /> */}
+          {/* <View style={[styles.quarterHeight, {backgroundColor: '#CCC'}]} /> */}
       </View>
     );
   }
 }
+
+Posts.propTypes =  {
+  navigator: React.PropTypes.object,
+};
 
 export default Posts;

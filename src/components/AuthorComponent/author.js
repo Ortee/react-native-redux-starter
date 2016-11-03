@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+import { View, Text } from 'react-native';
+import { Button } from 'react-native-material-design';
 
 class Author extends Component {
   _navigate = () => {
@@ -10,16 +10,18 @@ class Author extends Component {
   }
   render() {
     return (
-      <View style={{margin: 20}}>
-        <TouchableHighlight onPress={ () => this._navigate() }>
-            <Text>Back</Text>
-        </TouchableHighlight>
+      <View style={{margin: 20, backgroundColor: 'grey'}}>
+        <Button value="Menu" raised onPress={ () => this._navigate() } />
         <View style={{margin: 120}}>
-          <Text onPress={Actions.posts}>Author Component</Text>
+          <Text>Author Component</Text>
         </View>
       </View>
     );
   }
 }
+
+Author.propTypes =  {
+  navigator: React.PropTypes.object,
+};
 
 export default Author;
