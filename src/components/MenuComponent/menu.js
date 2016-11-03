@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Button from 'react-native-button';
 
 class Menu extends Component {
   render() {
     return (
-      <View style={{margin: 128}}>
+      <View style={{margin: 20,backgroundColor: 'grey'}}>
         <Button onPress={this.navigate.bind(this, 'posts')}>POSTS</Button>
         <Button onPress={this.navigate.bind(this, 'author')}>AUTHOR</Button>
       </View>

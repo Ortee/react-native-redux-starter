@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Navigator } from 'react-native';
+import { Navigator, View } from 'react-native';
 
 import Menu from '../MenuComponent/menu';
 import Posts from '../PostsComponent/posts';
@@ -8,20 +8,23 @@ import Author from '../AuthorComponent/author';
 class Main extends Component {
   renderScene(route, navigator) {
     if (route.name === 'posts') {
-      return <Posts navigator={navigator}/>;
+      return <Posts {...this.props} navigator={navigator}/>;
     } else if (route.name === 'author') {
-      return <Author navigator={navigator}/>;
+      return <Author {...this.props} navigator={navigator}/>;
     } if (route.name === 'menu') {
       return (<Menu navigator={navigator}/>);
     }
     return (<Menu navigator={navigator}/>);
   }
   render() {
+    console.log(this.props);
     return (
-      <Navigator
-        initialRoute={{name: 'menu'}}
-        renderScene={this.renderScene.bind(this)}
-      />
+      <View style={{ flex: 1}}>
+        <Navigator
+          initialRoute={{name: 'menu'}}
+          renderScene={this.renderScene.bind(this)}
+        />
+      </View>
     );
   }
 }

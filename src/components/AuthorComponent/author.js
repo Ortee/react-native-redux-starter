@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 class Author extends Component {
+  _navigate = () => {
+    this.props.navigator.push({
+      name: 'Home',
+    });
+  }
   render() {
-    console.log("AUTHOR");
     return (
-      <View style={{margin: 128}}>
-        <Text onPress={Actions.posts}>Author Component</Text>
+      <View style={{margin: 20}}>
+        <TouchableHighlight onPress={ () => this._navigate() }>
+            <Text>Back</Text>
+        </TouchableHighlight>
+        <View style={{margin: 120}}>
+          <Text onPress={Actions.posts}>Author Component</Text>
+        </View>
       </View>
     );
   }
