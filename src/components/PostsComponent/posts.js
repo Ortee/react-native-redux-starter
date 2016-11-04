@@ -10,10 +10,6 @@ class Posts extends Component {
   }
   render() {
     var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column'
-    },
     halfHeight: {
         flex: .5,
         backgroundColor: '#FF3366'
@@ -24,11 +20,7 @@ class Posts extends Component {
     }
   });
     return (
-      <View style={styles.container}>
-          <View style={styles.halfHeight} />
-          {/* <View style={styles.quarterHeight} /> */}
-          {/* <View style={[styles.quarterHeight, {backgroundColor: '#CCC'}]} /> */}
-      </View>
+        <View style={styles.halfHeight} />
     );
   }
 }
