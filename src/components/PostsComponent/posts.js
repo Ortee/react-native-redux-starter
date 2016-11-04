@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import GiftedSpinner from 'react-native-gifted-spinner';
 
 const styles = StyleSheet.create({
   posts: {
@@ -19,6 +20,11 @@ const styles = StyleSheet.create({
     color: '#FF0000',
     fontWeight: '600',
   },
+  spinner: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 class Posts extends Component {
@@ -34,9 +40,8 @@ class Posts extends Component {
   render() {
     if (this.props.posts.length === 0) {
       return (
-      <View style={styles.posts}>
-        <Text style={styles.headerText}>Posts from My API</Text>
-        <Text style={styles.offline}>SERVER OFFLINE</Text>
+      <View style={styles.spinner}>
+        <GiftedSpinner />
       </View>);
     }
     return (
