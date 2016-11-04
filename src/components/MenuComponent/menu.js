@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TouchableHighlight} from 'react-native';
 
 import Posts from '../PostsComponent/posts';
 import Author from '../AuthorComponent/author';
+import Home from '../HomeComponent/home';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,19 +23,19 @@ const styles = StyleSheet.create({
     color: '#262626',
   },
   navButtonRight: {
-    backgroundColor: '#3897f0',
+    backgroundColor: '#00d8ff',
     flexGrow: 1,
     borderLeftColor: '#fff',
     borderLeftWidth: 5,
   },
   navButtonLeft: {
-    backgroundColor: '#3897f0',
+    backgroundColor: '#00d8ff',
     flexGrow: 1,
     borderRightColor: '#fff',
     borderRightWidth: 5,
   },
   navButton: {
-    backgroundColor: '#3897f0',
+    backgroundColor: '#00d8ff',
     flexGrow: 1,
   },
   navButtonText: {
@@ -75,12 +76,15 @@ const styles = StyleSheet.create({
 class Menu extends Component {
   constructor(props) {
     super(props);
+    this.props.changeRoute('home')
   }
   renderContent = (name) => {
     if (name === 'posts') {
       return <Posts {...this.props}/>;
     } else if (name === 'author') {
       return <Author {...this.props}/>;
+    } else if (name === 'home') {
+      return <Home {...this.props}/>;
     }
     return <Text>No route</Text>;
   }
@@ -91,7 +95,7 @@ class Menu extends Component {
             <Text style={styles.headerText}>REACT NATIVE STARTER</Text>
           </View>
           <View style={styles.nav}>
-            <TouchableHighlight style={styles.navButtonLeft} onPress={() => this.props.changeRoute('menu')}>
+            <TouchableHighlight style={styles.navButtonLeft} onPress={() => this.props.changeRoute('home')}>
               <Text style={styles.navButtonText}>Home</Text>
             </TouchableHighlight>
             <TouchableHighlight style={styles.navButton} onPress={() => this.props.changeRoute('posts')}>
