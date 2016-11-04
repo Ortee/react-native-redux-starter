@@ -1,4 +1,4 @@
-function route(state = new String(), action) {
+function route(state = '', action) {
   switch (action.type) {
   case 'CHANGE_ROUTE' :
     return action.route;
