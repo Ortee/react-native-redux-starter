@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import GiftedSpinner from 'react-native-gifted-spinner';
+import Post from './post';
 
 const styles = StyleSheet.create({
   posts: {
@@ -10,11 +11,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   table: {
-    marginTop: 20,
-  },
-  item: {
-    borderColor: '#000',
-    borderWidth: 1,
+    marginBottom: 20,
   },
   offline: {
     color: '#FF0000',
@@ -25,6 +22,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  addButton: {
+    backgroundColor: '#222',
+    height: 60,
+    borderWidth: 3,
+    borderColor: '#00d8ff',
+  },
+  addButtonText: {
+    color: '#00d8ff',
+    fontSize: 25,
+    fontWeight: '600',
+    textAlign: 'center',
+    paddingTop: 13,
+  },
 });
 
 class Posts extends Component {
@@ -34,9 +44,6 @@ class Posts extends Component {
   componentDidMount = () => {
     this.props.showPosts();
   }
-  renderData = () =>{
-
-  }
   render() {
     if (this.props.posts.length === 0) {
       return (
@@ -45,17 +52,23 @@ class Posts extends Component {
       </View>);
     }
     return (
-        <View style={styles.posts}>
-          <Text style={styles.headerText}>Posts from My API</Text>
+        <ScrollView style={styles.posts}>
           <View style={styles.table}>
             {this.props.posts.map((elem, index)=>{
-              return (<View key={index} style={styles.item}>
-                <Text>Name: {elem.name}</Text>
-                <Text>Content: {elem.content}</Text>
-              </View>);
+              return (
+                <Post
+                  key={index}
+                  i={index}
+                  post={elem}
+                  {...this.props}
+                />
+              );
             })}
           </View>
-        </View>
+          <TouchableHighlight style={styles.addButton} onPress={() => this.props.changeRoute('addpost')}>
+            <Text style={styles.addButtonText}>ADD POST</Text>
+          </TouchableHighlight>
+        </ScrollView>
     );
   }
 }
@@ -63,6 +76,7 @@ class Posts extends Component {
 Posts.propTypes =  {
   posts: React.PropTypes.array,
   showPosts: React.PropTypes.func,
+  changeRoute: React.PropTypes.func,
 };
 
 export default Posts;

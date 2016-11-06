@@ -4,6 +4,8 @@ import { View, StyleSheet, Text, TouchableHighlight} from 'react-native';
 import Posts from '../PostsComponent/posts';
 import Author from '../AuthorComponent/author';
 import Home from '../HomeComponent/home';
+import AddPost from '../PostsComponent/addPost';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -20,26 +22,26 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '600',
     fontSize: 30,
-    color: '#262626',
+    color: '#222',
   },
   navButtonRight: {
-    backgroundColor: '#00d8ff',
+    backgroundColor: '#222',
     flexGrow: 1,
     borderLeftColor: '#fff',
     borderLeftWidth: 5,
   },
   navButtonLeft: {
-    backgroundColor: '#00d8ff',
+    backgroundColor: '#222',
     flexGrow: 1,
     borderRightColor: '#fff',
     borderRightWidth: 5,
   },
   navButton: {
-    backgroundColor: '#00d8ff',
+    backgroundColor: '#222',
     flexGrow: 1,
   },
   navButtonText: {
-    color: '#fff',
+    color: '#00d8ff',
     fontSize: 25,
     fontWeight: '600',
     textAlign: 'center',
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   content: {
-    borderTopColor: '#dbdbdb',
+    borderTopColor: '#222',
     borderTopWidth: 1,
     marginTop: 5,
     flex: 0.79,
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
   footer: {
     flex: 0.05,
     backgroundColor: '#fafafa',
-    borderTopColor: '#dbdbdb',
+    borderTopColor: '#222',
     borderTopWidth: 1,
   },
   footerText: {
@@ -69,14 +71,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '600',
     fontSize: 20,
-    color: '#262626',
+    color: '#222',
   },
 });
 
 class Menu extends Component {
   constructor(props) {
     super(props);
-    this.props.changeRoute('home')
+    this.props.changeRoute('home');
   }
   renderContent = (name) => {
     if (name === 'posts') {
@@ -85,6 +87,8 @@ class Menu extends Component {
       return <Author {...this.props}/>;
     } else if (name === 'home') {
       return <Home {...this.props}/>;
+    } else if (name === 'addpost') {
+      return <AddPost {...this.props}/>;
     }
     return <Text>No route</Text>;
   }
