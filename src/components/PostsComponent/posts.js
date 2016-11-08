@@ -3,6 +3,8 @@ import { ScrollView, View, Text, StyleSheet, TouchableHighlight } from 'react-na
 import GiftedSpinner from 'react-native-gifted-spinner';
 import Post from './post';
 
+import colors from '../../styles/colors';
+
 const styles = StyleSheet.create({
   posts: {
     flex: 1,
@@ -23,13 +25,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   addButton: {
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
     height: 60,
     borderWidth: 3,
-    borderColor: '#00d8ff',
+    borderColor: colors.blue,
   },
   addButtonText: {
-    color: '#00d8ff',
+    color: colors.blue,
     fontSize: 25,
     fontWeight: '600',
     textAlign: 'center',

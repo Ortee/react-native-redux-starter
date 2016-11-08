@@ -6,42 +6,43 @@ import Author from '../AuthorComponent/author';
 import Home from '../HomeComponent/home';
 import AddPost from '../PostsComponent/addPost';
 
+import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#fafafa',
+    backgroundColor: colors.background,
   },
   header: {
     flex: 0.07,
     marginTop: 20,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
   },
   headerText: {
     textAlign: 'center',
     fontWeight: '600',
     fontSize: 30,
-    color: '#222',
+    color: colors.dark,
   },
   navButtonRight: {
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
     flexGrow: 1,
-    borderLeftColor: '#fff',
+    borderLeftColor: colors.background,
     borderLeftWidth: 5,
   },
   navButtonLeft: {
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
     flexGrow: 1,
-    borderRightColor: '#fff',
+    borderRightColor: colors.background,
     borderRightWidth: 5,
   },
   navButton: {
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
     flexGrow: 1,
   },
   navButtonText: {
-    color: '#00d8ff',
+    color: colors.blue,
     fontSize: 25,
     fontWeight: '600',
     textAlign: 'center',
@@ -50,20 +51,20 @@ const styles = StyleSheet.create({
   nav: {
     flex: 0.09,
     flexDirection: 'row',
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
     justifyContent: 'space-between',
   },
   content: {
-    borderTopColor: '#222',
+    borderTopColor: colors.dark,
     borderTopWidth: 1,
     marginTop: 5,
     flex: 0.79,
-    backgroundColor: '#fafafa',
+    backgroundColor: colors.background,
   },
   footer: {
     flex: 0.05,
-    backgroundColor: '#fafafa',
-    borderTopColor: '#222',
+    backgroundColor: colors.background,
+    borderTopColor: colors.dark,
     borderTopWidth: 1,
   },
   footerText: {
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '600',
     fontSize: 20,
-    color: '#222',
+    color: colors.dark,
   },
 });
 

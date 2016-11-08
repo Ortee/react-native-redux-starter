@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
 
+import colors from '../../styles/colors';
+
 const styles = StyleSheet.create({
   addpost: {
     flex: 1,
@@ -8,7 +10,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    borderColor: '#000',
+    borderColor: colors.dark,
     borderWidth: 2,
     height: 40,
     marginLeft: 20,
@@ -16,13 +18,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: '#000',
+    backgroundColor: colors.dark,
     width: 300,
     height: 40,
   },
   buttonText: {
     paddingTop: 6,
-    color: '#00d8ff',
+    color: colors.blue,
     fontSize: 25,
     fontWeight: '600',
     textAlign: 'center',

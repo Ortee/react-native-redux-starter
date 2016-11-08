@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 
+import colors from '../../styles/colors';
+
 const styles = StyleSheet.create({
   item: {
     flexGrow: 1,
     marginTop: 10,
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
     paddingTop: 10,
     paddingBottom: 10,
   },
   text: {
-    color: '#00d8ff',
+    color: colors.blue,
     marginLeft: 10,
   },
   remove: {
@@ -20,21 +22,21 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     textAlign: 'center',
-    color: '#00d8ff',
+    color: colors.blue,
     fontSize: 18,
     fontWeight: '600',
   },
   removeBox: {
     justifyContent: 'center',
     alignItems: 'center',
-    borderLeftColor: '#00d8ff',
+    borderLeftColor: colors.blue,
     borderLeftWidth: 1,
-    borderBottomColor: '#00d8ff',
+    borderBottomColor: colors.blue,
     borderBottomWidth: 1,
-    borderTopColor: '#00d8ff',
+    borderTopColor: colors.blue,
     borderTopWidth: 1,
     marginTop: 10,
-    backgroundColor: '#222',
+    backgroundColor: colors.dark,
   },
 });
 
