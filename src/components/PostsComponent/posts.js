@@ -9,15 +9,8 @@ const styles = StyleSheet.create({
   posts: {
     flex: 1,
   },
-  headerText: {
-    fontSize: 25,
-  },
   table: {
     marginBottom: 20,
-  },
-  offline: {
-    color: '#FF0000',
-    fontWeight: '600',
   },
   spinner: {
     flex: 1,
